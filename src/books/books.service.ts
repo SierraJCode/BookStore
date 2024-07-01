@@ -21,4 +21,8 @@ export class BooksService {
         const createdBook = new this.BookModel(createBookDTO)
         return createdBook;
     }
+
+    async delete(bookID: string): Promise<Book>{
+        return this.BookModel.findByIdAndDelete(bookID).exec()
+    }
 }
