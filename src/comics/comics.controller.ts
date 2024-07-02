@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, Get, Param, Post, Put, Query } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
 import { ComicsService } from './comics.service';
 import { CreateComicDTO } from './dto/comic.dto';
 import { Comic } from './interfaces/comic.interface';
@@ -23,12 +23,12 @@ export class ComicsController {
         return this.comicsService.add(createComicDTO);
     }
 
-    @Put()
-    async update(@Query('id') id: string, @Body() createBookDTO:CreateComicDTO){
+    @Put(':id')
+    async update(@Param('id') id: string, @Body() createBookDTO:CreateComicDTO){
         return this.comicsService.update(id, createBookDTO);
     }
 
-    @Delete('id')
+    @Delete(':id')
     async delete(@Param('id') id: string){
         return this.comicsService.delete(id);
     }
