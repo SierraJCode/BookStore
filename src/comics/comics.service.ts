@@ -22,7 +22,7 @@ export class ComicsService {
         return this.comicModel.create(createComicDTO);
     };
 
-    async uptadte(id: string, createComicDTO: CreateComicDTO){
+    async update(id: string, createComicDTO: CreateComicDTO){
         return this.comicModel.findByIdAndUpdate(id, createComicDTO, {new: true}).exec();
     };
 
