@@ -2,7 +2,6 @@ import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common'
 import { ComicsService } from './comics.service';
 import { CreateComicDTO } from './dto/comic.dto';
 import { Comic } from './interfaces/comic.interface';
-import { CreateBookDTO } from 'src/books/dto/create-book.dto';
 
 @Controller('comics')
 export class ComicsController {
