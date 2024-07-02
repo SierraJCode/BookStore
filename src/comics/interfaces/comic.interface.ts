@@ -1,6 +1,6 @@
 import { Document } from "mongoose";
 
-export interface comic extends Document{
+export interface Comic extends Document{
     title: string,
     author: string,
     publishedDate: Date,
